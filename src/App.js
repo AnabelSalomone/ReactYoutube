@@ -26,14 +26,14 @@ function App() {
 
   return (
     <div className="App">
-      <Searchbar handleKeyword={setSearchKeyword} />
       <Router>
+      <Searchbar handleKeyword={setSearchKeyword} />
         <Switch>
           <Route path="/Video">
             <Video />
           </Route>
           <Route path="/SearchResults">
-            <SearchResults results={SearchResult} />
+            <SearchResults results={searchResult} />
           </Route>
         </Switch>
       </Router>
