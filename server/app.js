@@ -3,6 +3,7 @@ let app = express();
 let cors = require("cors");
 let YouTube = require("youtube-node");
 require("dotenv").config();
+const port = 5000
 
 app.use(cors());
 
@@ -19,10 +20,16 @@ const ytKey = process.env.YT_KEY
 youTube.setKey(ytKey);
 
 
-app.get("/", (req, res) => {
-  res.send("HelloWorld!")
+app.get("/search/:keyword", (req, res) => {
+  youTube.search(req.params.keyword, 2, (error, result) => {
+    if (error) {
+      console.log(error);
+    } else {
+      res.json(result, null, 2);
+    }
+  });
 });
 
-app.listen(5000, function () {
-  console.log("Listened on port 5000!");
+app.listen(port, function () {
+  console.log(`Listened on port ${port}!`);
 });
