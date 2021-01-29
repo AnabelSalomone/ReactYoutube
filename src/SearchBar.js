@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { withRouter } from "react-router-dom";
+import {TextInput} from "react-materialize"
 
 const SearchBar = (props) => {
   let { handleKeyword } = props;
@@ -12,7 +13,8 @@ const SearchBar = (props) => {
   };
 
   return (
-    <div>
+    <div className="search-bar-container">
+      <h2>My Youtube app</h2>
       <form>
         <input
           type="text"

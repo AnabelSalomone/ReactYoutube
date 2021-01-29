@@ -8,8 +8,11 @@ import SearchResults from "./SearchResults";
 
 function App() {
   const [searchResult, setSearchResult] = useState([]); // established via the APIData function and sent to the SerachResults component
+  const [keyword, setKeyword] = useState("");
 
   const APIData = async (keyword) => {
+    setKeyword(keyword)
+
     const url = "http://localhost:5000/Search/";
     const api = url + keyword;
 
@@ -33,7 +36,7 @@ function App() {
             <Video />
           </Route>
           <Route path="/SearchResults">
-            <SearchResults results={searchResult} />
+            <SearchResults results={searchResult} keyword={keyword}/>
           </Route>
         </Switch>
       </Router>

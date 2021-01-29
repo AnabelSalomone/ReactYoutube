@@ -12,10 +12,16 @@ code {
     monospace;
 }
 
+.App{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .video-preview-container{
   display: flex;
   width: 45em;
-  background-color: bisque;
+  background-color: rgb(252, 237, 218);
   margin-bottom: 16px;
 }
 
@@ -23,4 +29,12 @@ code {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.search-bar-container{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 16px;
+  width: 45em;
 }
