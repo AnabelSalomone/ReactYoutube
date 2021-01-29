@@ -25,7 +25,7 @@ app.get("/search/:keyword", (req, res) => {
     if (error) {
       console.log(error);
     } else {
-      res.json(result, null, 2);
+      res.json(result.items, null, 2);
     }
   });
 });

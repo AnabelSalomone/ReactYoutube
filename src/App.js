@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Searchbar from "./SearchBar";
@@ -6,28 +6,27 @@ import Video from "./Video";
 import SearchResults from "./SearchResults";
 
 function App() {
-  const [searchKeyword, setSearchKeyword] = useState(""); // established from the Searchbar component
-  const [searchResult, setSearchResult] = useState({}); // established via the APIData function and sent to the SerachResults component
+  const [searchResult, setSearchResult] = useState([]); // established via the APIData function and sent to the SerachResults component
 
   const APIData = async (keyword) => {
     const url = "http://localhost:5000/Search/";
     const api = url + keyword;
 
     const data = await fetch(api);
-    const json = await Promise.resolve(data.clone().json());
+    const json = await data.clone().json();
 
-    console.log(json);
-    setSearchResult(Object.assign({}, json));
+    setSearchResult(json);
   };
 
-  useEffect(() => {
-    APIData(searchKeyword);
-  }, [searchKeyword]);
+  const handleSearchbar = (keyword) => {
+    APIData(keyword);
+  };
+
 
   return (
     <div className="App">
       <Router>
-      <Searchbar handleKeyword={setSearchKeyword} />
+        <Searchbar handleKeyword={handleSearchbar} />
         <Switch>
           <Route path="/Video">
             <Video />
