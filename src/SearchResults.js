@@ -5,8 +5,7 @@ const SearchResults = (props) => {
   const { results } = props;
 
   return (
-    <div>
-      I'm the search results
+    <div className="search-results-container">
       {results.map( result => {
         return <VideoPreview info={result}/>;
       })}

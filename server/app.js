@@ -21,7 +21,7 @@ youTube.setKey(ytKey);
 
 
 app.get("/search/:keyword", (req, res) => {
-  youTube.search(req.params.keyword, 2, (error, result) => {
+  youTube.search(req.params.keyword, 10, (error, result) => {
     if (error) {
       console.log(error);
     } else {
