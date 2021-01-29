@@ -1,14 +1,14 @@
 import React from "react";
+import VideoPreview from './VideoPreview'
 
 const SearchResults = (props) => {
   const { results } = props;
-  console.log("SEARCH RESULTS", results)
 
   return (
     <div>
       I'm the search results
-      {results.map( item => {
-        return item.id.videoId
+      {results.map( result => {
+        return <VideoPreview info={result}/>;
       })}
 
     </div>
