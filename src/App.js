@@ -11,7 +11,7 @@ function App() {
   const [keyword, setKeyword] = useState("");
 
   const APIData = async (keyword) => {
-    setKeyword(keyword)
+    setKeyword(keyword);
 
     const url = "http://localhost:5000/Search/";
     const api = url + keyword;
@@ -26,18 +26,18 @@ function App() {
     APIData(keyword);
   };
 
-
   return (
     <div className="App">
       <Router>
         <Searchbar handleKeyword={handleSearchbar} />
         <Switch>
-          <Route path="/Video">
-            <Video />
-          </Route>
-          <Route path="/SearchResults">
-            <SearchResults results={searchResult} keyword={keyword}/>
-          </Route>
+          <Route path="/Video/:id" children={<Video />} />
+          <Route
+            path="/SearchResults"
+            children={
+              <SearchResults results={searchResult} keyword={keyword} />
+            }
+          / >
         </Switch>
       </Router>
     </div>
