@@ -12,7 +12,7 @@ body {
 .video-preview-container{
   display: flex;
   width: 45em;
-  background-color: rgb(252, 237, 218);
+  background-color: rgb(245, 243, 241);
   margin-bottom: 16px;
 }
 

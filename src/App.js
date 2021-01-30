@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import "materialize-css";
-import "./App.css";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Searchbar from "./SearchBar";
 import Video from "./Video";
