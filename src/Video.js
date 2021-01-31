@@ -1,11 +1,14 @@
 import React from "react";
-import { useParams } from "react-router-dom";
+import { useParams, useLocation, withRouter } from "react-router-dom";
 
 const Video = () => {
-  let { id } = useParams();
+  const { id } = useParams();
+  const data = useLocation();
+  const { snippet } = data.state.info;
 
   return (
     <div>
+      <h3>{snippet.title}</h3>
       <iframe
         width="853"
         height="480"
@@ -16,4 +19,4 @@ const Video = () => {
   );
 };
 
-export default Video;
+export default withRouter(Video);
