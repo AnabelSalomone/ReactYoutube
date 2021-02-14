@@ -1,42 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=Poiret+One&display=swap");
+
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
 }
 
-.App{
+.App {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.video-preview-container{
+.video-preview-container {
   display: flex;
   width: 45em;
-  background-color: rgb(245, 243, 241);
   margin-bottom: 16px;
 }
 
-.search-results-container{
+.video-preview-container:hover {
+  background-color: #E8E8E8;
+}
+
+.video-preview-container a {
+  text-decoration: none;
+}
+
+.search-results-container {
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.search-bar-container{
+.search-bar-container {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin-bottom: 16px;
   width: 45em;
-  color: red;
 }
 
-.video-preview-info{
+.search-bar-container h2 {
+  font-family: "Poiret One", cursive;
+  color: rgb(73, 73, 73)
+}
+
+.search-bar-container input {
+  border: 0;
+  border-bottom: 1px solid #E8E8E8;
+  width: 15rem;
+  margin-right: 8px;
+  min-height: 1.5rem;
+}
+
+.search-bar-container button{
+  border-radius: 10%;
+  background-color: white;
+  min-height: 2rem;
+  min-width: 4rem;
+  border: 0.5px solid #E8E8E8;
+}
+
+.video-preview-info {
   padding-left: 10px;
   text-align: justify;
 }
 
-.video-preview-description{
+.video-preview-description {
   font-size: small;
   color: rgb(73, 73, 73);
 }
