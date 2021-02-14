@@ -7,27 +7,27 @@ const VideoPreview = (props) => {
   const { snippet } = props.info;
 
   return (
-    <div className="video-preview-container">
-      <div>
-        <img src={props.info.snippet.thumbnails.medium.url} />
+    <Link
+      to={{
+        pathname: `/Video/${props.info.id.videoId}`,
+        state: {
+          info: { snippet },
+        },
+      }}
+    >
+      <div className="video-preview-container">
+        <div>
+          <img src={props.info.snippet.thumbnails.medium.url} />
+        </div>
+        <div className="video-preview-info">
+          <h3>{title}</h3>
+          <p>{props.info.snippet.channelTitle}</p>
+          <p className="video-preview-description">
+            {props.info.snippet.description}
+          </p>
+        </div>
       </div>
-      <div className="video-preview-info">
-        <Link
-          to={{
-            pathname: `/Video/${props.info.id.videoId}`,
-            state: {
-              info: { snippet },
-            },
-          }}
-        >
-          {title}
-        </Link>
-        <p>{props.info.snippet.channelTitle}</p>
-        <p className="video-preview-description">
-          {props.info.snippet.description}
-        </p>
-      </div>
-    </div>
+    </Link>
   );
 };
 
