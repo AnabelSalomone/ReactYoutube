@@ -11,20 +11,6 @@ body {
   align-items: center;
 }
 
-.video-preview-container {
-  display: flex;
-  width: 45em;
-  margin-bottom: 16px;
-}
-
-.video-preview-container:hover {
-  background-color: #E8E8E8;
-}
-
-.video-preview-container a {
-  text-decoration: none;
-}
-
 .search-results-container {
   display: flex;
   flex-direction: column;
@@ -68,4 +54,20 @@ body {
 .video-preview-description {
   font-size: small;
   color: rgb(73, 73, 73);
+}
+
+.video-preview-container {
+  display: flex;
+  width: 45em;
+  margin-bottom: 16px;
+}
+
+.video-preview-container:hover {
+  background-color: #E8E8E8;
+}
+
+.video-preview-container a {
+  text-decoration: none;
+  font-weight: bold;
+  color: darkslategrey;
 }
